@@ -1,0 +1,22 @@
+#encoding=utf-8
+class Config():
+    vector_size = 80  # 每个单词向量和词性向量的维度
+    pseg_size = 30  # 每个词性向量的维度
+    sentence_length = 200  # 设定的句子的最大长度
+    num_filters = 128  # 卷积核的个数
+    n_hidden=100 #rnn隐藏层节点的个数
+    num_classes = 10  # 类别种类数
+    l2_reg_lambda = 0.001  # L2正则化系数的比率
+    filter_hs = [3, 4, 5]
+    keep_prob = 0.6  # 丢失率
+    batch_size = 128  # 每个批次的大小
+    num_epochs = 20  # 训练的轮数
+    num_steps = 100  # 学习率衰减的步数
+    init_learning_rate = 0.05  # 初始学习率
+    model_save_location = "textcnn_model/model"  # 网络模型的保存地址
+    file_location = "data/cut_pseg_train_data.csv"  # 数据文件的保存地址
+    w2v_model_location = "w2v_model/w2v_model"  # 词向量模型的保存地址
+    words_location = "words/words.txt"  # "训练数据词表的保存地址"
+    psegs_location = "words/psegs.txt"  # "词性表的保存地址"
+    save_per_batch = 10  # 每多少轮存入tensorboard
+    print_per_batch = 10  #每多少步输出一次结果
