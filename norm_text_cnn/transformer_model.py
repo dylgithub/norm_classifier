@@ -47,7 +47,7 @@ class TransformerModel():
                 #注意应该用tf.shape(self.input_x)[0]获得而不可用self.input_x.shape[0]获得
             positional_inputs=tf.tile(tf.range(0,self.config.sentence_length),[tf.shape(self.input_x)[0]])
             #返回batch_size个x，每个x没[0,1,2....self.config.sentence_length]
-            positional_inputs=tf.reshape(positional_inputs,[self.config.batch_size,self.config.sentence_length])
+            positional_inputs=tf.reshape(positional_inputs,[tf.shape(self.input_x)[0],self.config.sentence_length])
             #融入位置信息
             input_x_content_add_positional=tf.add(input_x_content,tf.nn.embedding_lookup(positional_embedding,positional_inputs))
             # print("shape test:",input_x_content.shape)
